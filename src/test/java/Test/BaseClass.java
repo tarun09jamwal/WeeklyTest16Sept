@@ -1,8 +1,11 @@
 package Test;
 
 import Page.PageFactory;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
@@ -20,30 +23,30 @@ public class BaseClass {
     @BeforeClass
     public static void Setup(String browserName) throws MalformedURLException {
         if (browserName.equalsIgnoreCase("chrome")) {
-            String Node = "http://192.168.18.98:4444";
-            DesiredCapabilities cap = new DesiredCapabilities();
-            cap.setBrowserName("chrome");
-            driver = new RemoteWebDriver(new URL(Node), cap);
-            driver.get("https://admin-demo.nopcommerce.com");
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-            pageFactory = new PageFactory(driver);
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
             driver.manage().window().maximize();
+            driver.navigate().to("https://demo.nopcommerce.com");
+            pageFactory = new PageFactory(driver);
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+
         } else if (browserName.equalsIgnoreCase("firefox")) {
-            String Node = "http://192.168.18.98:4444";
-            DesiredCapabilities cap = new DesiredCapabilities();
-            cap.setBrowserName("chrome");
-            driver = new RemoteWebDriver(new URL(Node), cap);
-            driver.get("https://admin-demo.nopcommerce.com");
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-            pageFactory = new PageFactory(driver);
+            driver = new FirefoxDriver();
             driver.manage().window().maximize();
+            driver.navigate().to("https://demo.nopcommerce.com");
+            pageFactory = new PageFactory(driver);
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         }
     }
 
     @AfterClass
-    public static void Logout() {
-        driver.findElement(By.xpath("//a[contains(text(),'Logout')]")).click();
-        driver.close();
+    public static void Logout()
+    {
+//        driver.close();
     }
 
 }
+
+
+
+

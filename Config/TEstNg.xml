@@ -4,7 +4,7 @@
     <test name="Verify admin able to search customer">
         <parameter name="browserName" value="chrome"></parameter>
         <classes>
-            <class name="Test.TestLogin"/>
+            <class name="Test.TestProductBuy"/>
         </classes>
     </test>
 

@@ -90,7 +90,7 @@ public class ProductBuy {
         driver.findElement(continue4).click();
         driver.findElement(continue5).click();
         driver.findElement(confirm2).click();
-        String actual = driver.findElement(By.xpath("//h1(text(),'Thank you')]")).getText();
+        String actual = driver.findElement(By.xpath("//h1[('Thank you')]")).getText();
         Assert.isTrue(actual.equals("Thank you"), "Expected result does not match with actual result");
     }
 }

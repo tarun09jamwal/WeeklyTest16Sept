@@ -42,7 +42,7 @@ public class BaseClass {
     @AfterClass
     public static void Logout()
     {
-//        driver.close();
+        driver.close();
     }
 
 }

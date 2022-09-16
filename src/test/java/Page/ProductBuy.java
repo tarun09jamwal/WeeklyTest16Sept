@@ -1,5 +1,6 @@
 package Page;
 
+import net.jodah.failsafe.internal.util.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -71,7 +72,7 @@ public class ProductBuy {
         driver.findElement(month).click();
         driver.findElement(yearOfBirth).click();
         driver.findElement(year).click();
-        driver.findElement(email).sendKeys("eruytrhytytfgy@gmail.com");
+        driver.findElement(email).sendKeys("hytyfgy@gmail.com");
         driver.findElement(company).sendKeys("Infostride");
         driver.findElement(password).sendKeys("Infostride");
         driver.findElement(confirmPassword).sendKeys("Infostride");
@@ -89,6 +90,8 @@ public class ProductBuy {
         driver.findElement(continue4).click();
         driver.findElement(continue5).click();
         driver.findElement(confirm2).click();
+        String actual = driver.findElement(By.xpath("//h1(text(),'Thank you')]")).getText();
+        Assert.isTrue(actual.equals("Thank you"), "Expected result does not match with actual result");
     }
 }
 

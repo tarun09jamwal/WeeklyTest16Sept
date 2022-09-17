@@ -8,6 +8,7 @@ public class PageFactory
 {
     WebDriver driver;
     ProductBuy productBuy;
+    CommunityPoll communityPoll;
     public PageFactory(WebDriver driver)
     {
         this.driver = driver;
@@ -18,6 +19,13 @@ public class PageFactory
             productBuy = new ProductBuy(driver);
         }
         return productBuy;
+    }
+    public CommunityPoll getCommunityPoll()
+    {
+        if (communityPoll == null) {
+            communityPoll = new CommunityPoll(driver);
+        }
+        return communityPoll;
     }
 
 }

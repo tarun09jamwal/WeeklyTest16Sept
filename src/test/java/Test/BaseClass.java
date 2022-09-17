@@ -6,13 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.time.Duration;
 
 public class BaseClass {
@@ -21,7 +17,7 @@ public class BaseClass {
 
     @Parameters("browserName")
     @BeforeClass
-    public static void Setup(String browserName) throws MalformedURLException {
+    public static void Setup(String browserName) {
         if (browserName.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
@@ -42,6 +38,7 @@ public class BaseClass {
     @AfterClass
     public static void Logout()
     {
+        driver.findElement(By.xpath("//a[contains(text(),'Log out')]"));
         driver.close();
     }
 

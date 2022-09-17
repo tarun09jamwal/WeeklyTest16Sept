@@ -11,7 +11,9 @@ import org.testng.ITestResult;
 public class Listners implements ITestListener {
     ExtentReports extent = ExtendReports.extentReportGenerator();
     ExtentTest test;
+
     WebDriver driver;
+
 
     public void onFinish(ITestContext context) {
         extent.flush();

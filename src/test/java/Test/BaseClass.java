@@ -38,7 +38,7 @@ public class BaseClass {
     @AfterClass
     public static void Logout()
     {
-        driver.findElement(By.xpath("//a[contains(text(),'Log out')]"));
+
         driver.close();
     }
 

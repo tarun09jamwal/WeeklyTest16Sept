@@ -2,38 +2,43 @@ package Page;
 
 import org.openqa.selenium.WebDriver;
 
-import java.io.IOException;
-
-public class PageFactory
-{
+public class PageFactory {
     WebDriver driver;
     ProductBuy productBuy;
     CommunityPoll communityPoll;
     ResgisterAndSignOutUser resgisterAndSignOutUser;
-    public PageFactory(WebDriver driver)
-    {
+    DigitalSampleDownload digitalSampleDownload;
+
+    public PageFactory(WebDriver driver) {
         this.driver = driver;
     }
-    public ProductBuy getProductBuy()
-    {
+
+    public ProductBuy getProductBuy() {
         if (productBuy == null) {
             productBuy = new ProductBuy(driver);
         }
         return productBuy;
     }
-    public CommunityPoll getCommunityPoll()
-    {
+
+    public CommunityPoll getCommunityPoll() {
         if (communityPoll == null) {
             communityPoll = new CommunityPoll(driver);
         }
         return communityPoll;
     }
-    public ResgisterAndSignOutUser getResgisterAndSignOutUser()
-    {
+
+    public ResgisterAndSignOutUser getResgisterAndSignOutUser() {
         if (resgisterAndSignOutUser == null) {
             resgisterAndSignOutUser = new ResgisterAndSignOutUser(driver);
         }
         return resgisterAndSignOutUser;
     }
 
+    public DigitalSampleDownload getDigitalSampleDownload() {
+        if (digitalSampleDownload == null) {
+            digitalSampleDownload = new DigitalSampleDownload(driver);
+        }
+        return digitalSampleDownload;
+
+    }
 }

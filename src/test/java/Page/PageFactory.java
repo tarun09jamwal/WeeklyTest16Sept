@@ -9,6 +9,7 @@ public class PageFactory
     WebDriver driver;
     ProductBuy productBuy;
     CommunityPoll communityPoll;
+    ResgisterAndSignOutUser resgisterAndSignOutUser;
     public PageFactory(WebDriver driver)
     {
         this.driver = driver;
@@ -26,6 +27,13 @@ public class PageFactory
             communityPoll = new CommunityPoll(driver);
         }
         return communityPoll;
+    }
+    public ResgisterAndSignOutUser getResgisterAndSignOutUser()
+    {
+        if (resgisterAndSignOutUser == null) {
+            resgisterAndSignOutUser = new ResgisterAndSignOutUser(driver);
+        }
+        return resgisterAndSignOutUser;
     }
 
 }

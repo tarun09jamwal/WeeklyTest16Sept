@@ -72,7 +72,7 @@ public class ProductBuy {
         driver.findElement(month).click();
         driver.findElement(yearOfBirth).click();
         driver.findElement(year).click();
-        driver.findElement(email).sendKeys("hyukgtyf@gmail.com");
+        driver.findElement(email).sendKeys("hyukgt78yf@gmail.com");
         driver.findElement(company).sendKeys("Infostride");
         driver.findElement(password).sendKeys("Infostride");
         driver.findElement(confirmPassword).sendKeys("Infostride");

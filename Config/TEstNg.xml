@@ -1,10 +1,24 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Cases" verbose="1">
 
-    <test name="Verify admin able to search customer">
+    <test name="Verify user able to buy product.">
         <parameter name="browserName" value="chrome"></parameter>
         <classes>
-            <class name="Test.TestLogin"/>
+            <class name="Test.TestProductBuy"/>
+        </classes>
+    </test>
+
+    <test name="Verify User is able to rate the website.">
+        <parameter name="browserName" value="chrome"></parameter>
+        <classes>
+            <class name="Test.TestCommunityPoll"/>
+        </classes>
+    </test>
+
+    <test name="Verify User is able Register and logout.">
+        <parameter name="browserName" value="chrome"></parameter>
+        <classes>
+            <class name="Test.TestRegisterAndSingOutUser"/>
         </classes>
     </test>
 

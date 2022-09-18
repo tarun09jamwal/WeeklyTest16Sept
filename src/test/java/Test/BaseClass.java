@@ -36,8 +36,7 @@ public class BaseClass {
     }
 
     @AfterClass
-    public static void Logout()
-    {
+    public static void Logout() {
 
         driver.close();
     }

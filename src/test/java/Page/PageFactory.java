@@ -8,6 +8,7 @@ public class PageFactory {
     CommunityPoll communityPoll;
     ResgisterAndSignOutUser resgisterAndSignOutUser;
     DigitalSampleDownload digitalSampleDownload;
+    CommentSubmit commentSubmit;
 
     public PageFactory(WebDriver driver) {
         this.driver = driver;
@@ -39,6 +40,14 @@ public class PageFactory {
             digitalSampleDownload = new DigitalSampleDownload(driver);
         }
         return digitalSampleDownload;
+
+    }
+
+    public CommentSubmit getCommentSubmit() {
+        if (commentSubmit == null) {
+            commentSubmit = new CommentSubmit(driver);
+        }
+        return commentSubmit;
 
     }
 }
